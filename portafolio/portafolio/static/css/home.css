@@ -1,0 +1,346 @@
+/* Colores profesionales */
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #2980b9;
+    --background: #f4f6f8;
+    --text: #222;
+    --footer-bg: #23272b;
+    --footer-text: #fff;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #34495e;
+    color: #222;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(44,62,80,0.05);
+}
+
+/* Centrar el contenido principal */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -2px 4px rgba(44,62,80,0.05);
+}
+
+/* Estilo para el botón de contacto */
+.contact-button {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #3498db;
+}
+/* Estilo para el contenedor de la tarjeta */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+/* Estilo para la tarjeta */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 400px;
+    text-align: center;
+    margin: 1rem;
+}
+
+/*header*/
+
+/* ...existing code... */
+
+header {
+    width: 100%;
+    background: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 3rem 0;
+}
+
+.header-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+    padding: 1rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-card ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.header-card li {
+    margin: 0;
+}
+
+.header-card a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.header-card a:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* Overlay de inicio */
+
+#overlay-menu {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(25, 36, 46, 0.986);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+}
+
+.overlay-card {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+}
+
+.overlay-item {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+    padding: 2.5rem 3.5rem;
+    font-size: 2.2rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.overlay-item:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: scale(1.08);
+}
+
+/* presentacion */
+/* ...existing code... */
+
+.presentacion-contenido {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+    padding: 2.5rem 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.presentacion-foto img {
+    width: 180px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+}
+
+.presentacion-info {
+    flex: 1;
+}
+
+.presentacion-info h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.presentacion-info p {
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+}
+
+.habilidades-carrusel-container {
+    margin-top: 1.5rem;
+}
+
+.habilidades-carrusel {
+    display: flex;
+    gap: 1.2rem;
+    overflow: hidden;
+    width: 320px;
+    position: relative;
+    height: 70px;
+}
+
+.habilidad-card {
+    min-width: 90px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    transition: transform 0.3s;
+    user-select: none;
+}
+
+/* Carrusel de proyectos */
+.proyectos-carrusel {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 2rem 0;
+    cursor: grab;
+    /* Para que las tarjetas ocupen el 100% */
+    width: 100%;
+}
+
+.proyecto-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+    min-width: 90vw;   /* Ocupa casi toda la ventana */
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    transition: transform 0.2s;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+    .proyecto-card {
+        flex-direction: column;
+        min-width: 98vw;
+        padding: 1rem;
+    }
+    .proyecto-card img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.proyecto-card img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+}
+
+.proyecto-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary);
+}
+
+.proyecto-info p {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* ...existing code... */
+
+.carrusel-contenedor {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.carrusel-flecha {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrusel-flecha:hover {
+    background: var(--primary);
+}
+
+.proyectos-carrusel {
+    flex: 1;
+    display: flex;
+    gap: 2rem;
+    overflow: hidden; /* Cambia de auto a hidden */
+    scroll-behavior: smooth;
+    padding: 2rem 0;
+    width: 100%;
+    cursor: default; /* Desactiva el cursor de arrastre */
+}
+
+/* ...existing code... */

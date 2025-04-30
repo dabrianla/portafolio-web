@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <div id="overlay-menu">
+        <div class="overlay-card">
+            <a href="#yo" class="overlay-link overlay-item">Dabrian</a>
+            <a href="#proyectos" class="overlay-link overlay-item">Proyectos</a>
+            <a href="#contacto" class="overlay-link overlay-item">Contactos</a>
+        </div>
+    </div>
+    <main>
+        <!-- Agrega esto dentro de <main> en tu home.html -->
+            <section id="yo" class="presentacion">
+                <div class="presentacion-contenido">
+                    <div class="presentacion-foto">
+                        <img src="{% static 'img/perfil.jpg' %}" alt="Foto de Dabrian Labraña">
+                    </div>
+                    <div class="presentacion-info">
+                        <h1>Dabrian Labraña</h1>
+                        <p><strong>Ciudad:</strong> Quilpué</p>
+                        <p><strong>Sexo:</strong> Masculino</p>
+                        <div class="habilidades-carrusel-container">
+                            <h2>Habilidades</h2>
+                            <div class="habilidades-carrusel" id="habilidades-carrusel">
+                                <div class="habilidad-card">Django</div>
+                                <div class="habilidad-card">HTML</div>
+                                <div class="habilidad-card">Java</div>
+                                <div class="habilidad-card">SQL</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="proyectos">
+                <h2>Proyectos</h2>
+                <div class="carrusel-contenedor">
+                    <button class="carrusel-flecha izquierda">&#8592;</button>
+                    <div class="proyectos-carrusel" id="proyectos-carrusel">
+                        <div class="proyecto-card">
+                            <img src="{% static 'images/proyecto1.jpg' %}" alt="Proyecto 1">
+                            <div class="proyecto-info">
+                                <h3>Proyecto 1</h3>
+                                <p>Descripción breve del proyecto 1.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carrusel-flecha derecha">&#8594;</button>
+                </div>
+            </section>
+            <section id="contacto">
+                <!-- ...tu información de contacto... -->
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>
