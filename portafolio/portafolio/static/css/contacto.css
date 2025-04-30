@@ -1,0 +1,41 @@
+/* Estilo para el botón de contacto */
+.contact-button {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #3498db;
+}
+
+.botones-redes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-linkedin, .btn-github {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.btn-linkedin:hover {
+    background: #01121b;
+}
+
+.btn-github:hover {
+    background: #23272b;
+}
+
+/* ...existing code... */

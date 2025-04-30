@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Home</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/presentacion.css' %}">
+    <link rel="stylesheet" href="{% static 'css/proyecto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contacto.css' %}">
 </head>
 <body>
     <div id="overlay-menu">
@@ -16,7 +19,7 @@
         </div>
     </div>
     <main>
-        <!-- Agrega esto dentro de <main> en tu home.html -->
+        <!-- Presentacion -->
             <section id="yo" class="presentacion">
                 <div class="presentacion-contenido">
                     <div class="presentacion-foto">
@@ -50,17 +53,36 @@
                                 <p>Descripción breve del proyecto 1.</p>
                             </div>
                         </div>
+                        <div class="proyecto-card">
+                            <img src="{% static 'images/proyecto1.jpg' %}" alt="Proyecto 1">
+                            <div class="proyecto-info">
+                                <h3>Proyecto 2</h3>
+                                <p>Descripción breve del proyecto 1.</p>
+                            </div>
+                        </div>
+                        <div class="proyecto-card">
+                            <img src="{% static 'images/proyecto1.jpg' %}" alt="Proyecto 1">
+                            <div class="proyecto-info">
+                                <h3>Proyecto 3</h3>
+                                <p>Descripción breve del proyecto 1.</p>
+                            </div>
+                        </div>
                     </div>
                     <button class="carrusel-flecha derecha">&#8594;</button>
                 </div>
             </section>
             <section id="contacto">
-                <!-- ...tu información de contacto... -->
+                <h1>Contacto</h1>
+                <div class="botones-redes">
+                    <a href="https://www.linkedin.com/" target="_blank" class="btn-linkedin">LinkedIn</a>
+                    <a href="https://github.com/" target="_blank" class="btn-github">GitHub</a>
+                </div>
+
             </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Dabrian Labraña. Todos los derechos reservados.</p>
     </footer>
     <script src="{% static 'js/home.js' %}"></script>
 </body>
