@@ -38,4 +38,12 @@
     background: #23272b;
 }
 
+.botones-redes a {
+    transition: transform 0.15s cubic-bezier(.25,1.5,.5,1), background 0.2s, color 0.2s;
+}
+
+.botones-redes a:active {
+    transform: scale(1.15);
+}
+
 /* ...existing code... */
