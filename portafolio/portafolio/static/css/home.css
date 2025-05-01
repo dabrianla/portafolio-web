@@ -1,12 +1,12 @@
 /* Colores profesionales */
 :root {
-    --primary: #2c3e50;
-    --secondary: #34495e;
-    --accent: #2980b9;
-    --background: #f4f6f8;
+    --primary: #15616D;
+    --secondary: #FF7D00;
+    --accent: #78290F;
+    --background: #001524;
     --text: #222;
     --footer-bg: #23272b;
-    --footer-text: #fff;
+    --footer-text: #FFECD1;
 }
 
 /* Reset básico */
@@ -17,7 +17,7 @@
 }
 
 body {
-    background: #34495e;
+    background: #001524;
     color: #222;
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
@@ -133,7 +133,7 @@ header {
     position: fixed;
     z-index: 9999;
     inset: 0;
-    background: rgba(24, 33, 43, 0.986);
+    background: #001524fc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,9 +147,9 @@ header {
 }
 
 .overlay-item {
-    background: #fff;
+    background: #FFECD1;
     border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+    box-shadow: #001524;
     padding: 2.5rem 3.5rem;
     font-size: 2.2rem;
     color: var(--primary);
@@ -163,7 +163,7 @@ header {
 
 .overlay-item:hover {
     background: var(--accent);
-    color: #fff;
+    color: #FFECD1;
     transform: scale(1.13);
 }
 
@@ -219,3 +219,62 @@ header {
         font-size: 1.3rem;
     }
 }
+
+/* Menú sticky oculto al inicio */
+.sticky-menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+    z-index: 1000;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(.25,1.5,.5,1), opacity 0.4s;
+}
+
+.sticky-menu.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.sticky-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sticky-link:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+.oculto {
+    display: none;
+}
+
+/* Animación de viaje al menú sticky */
+.overlay-card.animar-viaje {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.8s cubic-bezier(.25,1.5,.5,1), left 0.8s cubic-bezier(.25,1.5,.5,1), transform 0.8s cubic-bezier(.25,1.5,.5,1), scale 0.8s cubic-bezier(.25,1.5,.5,1);
+    z-index: 10000;
+}
+
+.overlay-card.viaje-final {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0) scale(0.5);
+}
+
