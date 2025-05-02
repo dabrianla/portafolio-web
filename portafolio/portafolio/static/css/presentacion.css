@@ -5,17 +5,17 @@
     display: flex;
     align-items: center;
     gap: 2.5rem;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+    background: #FFECD1;
+    border-radius: 80px;
+    box-shadow: 10px 15px 16px rgba(44, 61, 78, 0.993);
     padding: 2.5rem 2rem;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 2rem auto;
 }
 
 .presentacion-foto img {
-    width: 180px;
-    height: 260px;
+    width: 600px;
+    height: 460px;
     object-fit: cover;
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(44,62,80,0.10);
@@ -52,7 +52,7 @@
 
 .habilidad-card {
     min-width: 90px;
-    background: var(--accent);
+    background: #FF7D00;
     color: #fff;
     border-radius: 10px;
     padding: 1rem 1.5rem;
