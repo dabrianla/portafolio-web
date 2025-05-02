@@ -262,19 +262,5 @@ header {
     display: none;
 }
 
-/* Animación de viaje al menú sticky */
-.overlay-card.animar-viaje {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: top 0.8s cubic-bezier(.25,1.5,.5,1), left 0.8s cubic-bezier(.25,1.5,.5,1), transform 0.8s cubic-bezier(.25,1.5,.5,1), scale 0.8s cubic-bezier(.25,1.5,.5,1);
-    z-index: 10000;
-}
 
-.overlay-card.viaje-final {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0) scale(0.5);
-}
 
