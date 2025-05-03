@@ -5,9 +5,12 @@
     display: flex;
     align-items: center;
     gap: 2.5rem;
-    background: #FFECD1;
-    border-radius: 80px;
-    box-shadow: 10px 15px 16px rgba(44, 61, 78, 0.993);
+    background: #252422; /* mismo color de fondo que el inicio */
+    border: 2.5px solid #FFECD1; /* primera línea (borde interno) */
+    outline: 2.5px solid #FFECD1; /* segunda línea (contorno externo, puedes cambiar el color) */
+    outline-offset: 8px; /* separación entre el borde y el contorno */
+    border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.10);
     padding: 2.5rem 2rem;
     max-width: 1200px;
     margin: 2rem auto;
@@ -24,6 +27,7 @@
 .presentacion-info {
     flex: 1;
     min-width: 0;
+    color: #FFFCF2;
 }
 
 .presentacion-info h1 {
@@ -52,7 +56,7 @@
 
 .habilidad-card {
     min-width: 90px;
-    background: #FF7D00;
+    background: #252422;
     color: #fff;
     border-radius: 10px;
     padding: 1rem 1.5rem;

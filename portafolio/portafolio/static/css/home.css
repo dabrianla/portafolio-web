@@ -1,12 +1,12 @@
 /* Colores profesionales */
 :root {
-    --primary: #15616D;
-    --secondary: #FF7D00;
-    --accent: #78290F;
-    --background: #001524;
+    --primary: #EB5E28;
+    --secondary: #403D39;
+    --accent: #EB5E28;
+    --background: #252422;
     --text: #222;
-    --footer-bg: #23272b;
-    --footer-text: #FFECD1;
+    --footer-bg: #252422;
+    --footer-text: #FFFCF2;
 }
 
 /* Reset básico */
@@ -17,7 +17,7 @@
 }
 
 body {
-    background: #001524;
+    background: #252422;
     color: #222;
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
@@ -133,7 +133,7 @@ header {
     position: fixed;
     z-index: 9999;
     inset: 0;
-    background: #001524fc;
+    background: #252422fc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,7 +149,7 @@ header {
 .overlay-item {
     background: #FFECD1;
     border-radius: 18px;
-    box-shadow: #001524;
+    box-shadow: #2c2b28;
     padding: 2.5rem 3.5rem;
     font-size: 2.2rem;
     color: var(--primary);
@@ -226,7 +226,7 @@ header {
     top: 0;
     left: 0;
     width: 100vw;
-    background: #FFECD1;
+    background: #252422f4;
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -254,12 +254,33 @@ header {
 }
 
 .sticky-link:hover {
-    background: var(--accent);
-    color: #fff;
+    background: #252422; /* igual al fondo, sin cambio */
+    color: #FFECD1; /* igual al color original */
 }
 
 .oculto {
     display: none;
+}
+
+/* Subrayado animado para overlay y sticky menu */
+.sticky-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.sticky-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.2em;
+    width: 0;
+    height: 2px;
+    background: #FFECD1;
+    transition: width 2.0s cubic-bezier(.25,1.5,.5,1);
+}
+
+.sticky-link:hover::after {
+    width: 100%;
 }
 
 
