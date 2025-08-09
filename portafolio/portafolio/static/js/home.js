@@ -117,36 +117,3 @@ document.querySelectorAll('.overlay-link').forEach(link => {
     });
 });
 
-async function leerEjemplo() {
-    const TestObject = Parse.Object.extend("Test");
-    const query = new Parse.Query(TestObject);
-    try {
-        const resultados = await query.find();
-        resultados.forEach(obj => {
-            console.log(obj.get("foo"));
-        });
-    } catch (error) {
-        alert("Error al leer: " + error.message);
-    }
-}
-
-async function guardarEjemplo() {
-    const TestObject = Parse.Object.extend("Test");
-    const testObject = new TestObject();
-    testObject.set("foo", "bar");
-    try {
-        await testObject.save();
-        alert("¡Objeto guardado en Back4App!");
-    } catch (error) {
-        alert("Error al guardar: " + error.message);
-    }
-}
-
-// Llama a la función para probar
-// guardarEjemplo();
-
-Parse.initialize("ICKrGMMiBmE9As3TVmjv9zljTtl4FlvzpESehYo9", "qcglIEPuzFmDIGYkueXDiDVyX7SRySWQTczlL00V");
-Parse.serverURL = 'https://parseapi.back4app.com';
-
-
-
