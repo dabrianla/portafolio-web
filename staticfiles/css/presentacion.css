@@ -1,0 +1,65 @@
+/* presentacion */
+/* ...existing code... */
+
+.presentacion-contenido {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    background: #FFECD1;
+    border-radius: 80px;
+    box-shadow: 10px 15px 16px rgba(44, 61, 78, 0.993);
+    padding: 2.5rem 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.presentacion-foto img {
+    width: 600px;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+}
+
+.presentacion-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.presentacion-info h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.presentacion-info p {
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+}
+
+.habilidades-carrusel-container {
+    margin-top: 1.5rem;
+}
+
+.habilidades-carrusel {
+    display: flex;
+    gap: 1.2rem;
+    overflow: hidden;
+    width: 320px;
+    position: relative;
+    height: 70px;
+}
+
+.habilidad-card {
+    min-width: 90px;
+    background: #FF7D00;
+    color: #fff;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    transition: transform 0.3s;
+    user-select: none;
+}
