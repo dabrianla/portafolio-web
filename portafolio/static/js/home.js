@@ -117,3 +117,16 @@ document.querySelectorAll('.overlay-link').forEach(link => {
     });
 });
 
+// steam
+
+document.querySelectorAll('.ach-card img').forEach(img => {
+  img.loading = 'lazy';
+});
+
+// tooltip simple (accesible)
+document.querySelectorAll('.ach-card').forEach(card => {
+  card.addEventListener('keydown', e => { if (e.key === 'Enter') card.click(); });
+  card.addEventListener('click', () => {
+    // abrir modal con detalle del logro o proyecto
+  });
+});

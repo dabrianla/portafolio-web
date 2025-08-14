@@ -1,0 +1,144 @@
+<!-- ...existing code... -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Perfil — Dabrian</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/homest.css' %}">
+</head>
+<body>
+  <div class="container-page">
+    <section class="perfil" role="region" aria-label="Perfil de usuario">
+      <aside class="perfil-left">
+        <div class="avatar" aria-hidden="false">
+          <img src="{% static 'img/perfil.jpg' %}" alt="Avatar de Dabrian">
+          <div class="nivel-circle">10</div>
+        </div>
+      </aside>
+
+      <main class="perfil-main">
+        <!-- HEADER TOP: nombre + información (centro arriba) -->
+        <div class="header-top">
+          <div class="header-info">
+            <h1 class="profile-name">Jugo Zuko <span class="caret">▾</span></h1>
+            <div class="profile-sub">Dabrian • Quilpué, Valparaíso, Chile</div>
+          </div>
+        </div>
+
+        <!-- SHOWCASE -->
+        <div class="showcase panel">
+          <div class="showcase-head">
+            <h3>Expositor — Proyectos</h3>
+          </div>
+
+          <div class="projects-showcase" aria-live="polite">
+            <article class="project-card">
+              <img src="{% static 'img/perfil.jpg' %}" alt="Proyecto A">
+              <div class="project-meta">
+                <h4>Proyecto A</h4>
+                <p>Breve descripción del proyecto A.</p>
+                <a href="#" class="link">Ver</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img src="{% static 'img/perfil.jpg' %}" alt="Proyecto B">
+              <div class="project-meta">
+                <h4>Proyecto B</h4>
+                <p>Breve descripción del proyecto B.</p>
+                <a href="#" class="link">Ver</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- STATS (números grandes) -->
+        <section class="panel stats-row" aria-label="Estadísticas de proyectos">
+          <div class="stat">
+            <div class="stat-value">Proyectos</div>
+            <div class="stat-label">12</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">Proyectos subidos</div>
+            <div class="stat-label">9</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">Media de obtención</div>
+            <div class="stat-label">75%</div>
+          </div>
+        </section>
+
+        <!-- ACTIVIDAD -->
+        <section class="panel" aria-label="Actividad reciente">
+          <h4>Actividad reciente</h4>
+          <ul class="activity-list">
+            <li><strong>Proyecto Z</strong> — 100% completado</li>
+            <li><strong>Proyecto Y</strong> — 92% completado</li>
+            <li><strong>Proyecto X</strong> — 88% completado</li>
+          </ul>
+        </section>
+      </main>
+
+      <!-- SIDEBAR: nivel, XP, CV y Modificar perfil (ubicado arriba como en la referencia) -->
+      <aside class="perfil-right">
+        <div class="panel sidebar-top">
+          <div class="level-row">
+            <div class="level-title">Nivel <span class="level-num">10</span></div>
+            <div class="xp-panel">
+              <div class="xp-badge">400 XP</div>
+            </div>
+          </div>
+
+          <div class="sidebar-actions">
+            <a class="btn-cv" href="{% static 'files/Dabrian Labraña ing en informatica CV.pdf' %}" download="Dabrian_CV.pdf">Curriculum</a>
+            <button id="btn-modificar-perfil" class="btn-modificar">Modificar perfil</button>
+          </div>
+        </div>
+
+        <div class="panel" aria-label="Insignias">
+          <h4>Insignias</h4>
+          <div class="badge-row">
+            <div class="badge" title="Django">Django</div>
+            <div class="badge" title="HTML">HTML</div>
+            <div class="badge" title="Java">Java</div>
+            <div class="badge" title="SQL">SQL</div>
+          </div>
+        </div>
+
+        <div class="panel" aria-label="Colecciones">
+          <h4>Colecciones</h4>
+          <p>Items / proyectos guardados</p>
+        </div>
+
+        <div class="panel" aria-label="Inventario">
+          <h4>Inventario</h4>
+          <p>Capturas y vídeos (colección)</p>
+        </div>
+      </aside>
+    </section>
+  </div>
+
+  <!-- Modal selector de fondos -->
+  <div id="bg-modal" class="bg-modal" aria-hidden="true">
+    <div class="bg-modal-content" role="dialog" aria-label="Seleccionar fondo">
+      <h3>Seleccionar fondo</h3>
+      <div class="bg-options">
+        <button type="button" class="bg-option" data-bg="bg1" style="background-image:url('{% static 'img/bg1.jpg' %}')"></button>
+        <button type="button" class="bg-option" data-bg="bg2" style="background-image:url('{% static 'img/bg2.jpeg' %}')"></button>
+        <button type="button" class="bg-option" data-bg="bg3" style="background-image:url('{% static 'img/bg3.jpg' %}')"></button>
+        <button type="button" class="bg-option" data-bg="bg4" style="background-image:url('{% static 'img/bg4.jpg' %}')"></button>
+        <button type="button" class="bg-option" data-bg="bg5" style="background-image:url('{% static 'img/bg5.jpg' %}')"></button>
+      </div>
+      <div style="margin-top:1rem;display:flex;gap:.5rem;justify-content:flex-end">
+        <button id="bg-reset" class="btn">Restaurar</button>
+        <button id="bg-close" class="btn">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'js/homest.js' %}"></script>
+</body>
+</html>
