@@ -118,4 +118,15 @@ body.bg1 .container-page,body.bg2 .container-page,body.bg3 .container-page,body.
 @media (max-width:720px){.perfil{grid-template-columns:1fr;padding:0.6rem;gap:0.9rem}.avatar img{height:220px}.nivel-circle{width:60px;height:60px;right:10px;bottom:10px}.achievements-grid{grid-template-columns:repeat(auto-fit,minmax(90px,1fr))}.panel .badge-row{gap:0.4rem}body{padding-bottom:2rem}}
 /* accesibilidad: reduce motion */
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
-/* fin */
+
+/* Redes sociales (iconos inline, estilo portfolio/steam) */
+.socials{display:flex;gap:0.6rem;margin-top:0.6rem;align-items:center}
+.social-link{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:6px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:transform .12s ease,box-shadow .12s ease;box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
+.social-link svg{display:block}
+.social-link:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+.social-link[aria-label="LinkedIn"] svg path{fill:#66c0f4}
+.social-link[aria-label="Instagram"] svg path{fill:#f28bbc}
+.social-link[aria-label="WhatsApp"] svg path{fill:#7ee083}
+/* adaptaciones mobile */
+@media (max-width:720px){ .socials{gap:0.4rem} .social-link{width:36px;height:36px} }
+

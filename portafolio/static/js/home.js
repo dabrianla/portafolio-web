@@ -1,132 +1,62 @@
-document.querySelectorAll('.overlay-link').forEach(link => {
-    link.addEventListener('click', function() {
-        document.getElementById('overlay-menu').style.display = 'none';
+// Lógica para selector de fondos y persistencia (homest)
+document.addEventListener('DOMContentLoaded', () => {
+  const btnModificar = document.getElementById('btn-modificar-perfil');
+  const modal = document.getElementById('bg-modal');
+  const closeBtn = document.getElementById('bg-close');
+  const resetBtn = document.getElementById('bg-reset');
+  const bgOptions = document.querySelectorAll('.bg-option');
+
+  function openModal() {
+    if (!modal) return;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    const first = modal.querySelector('.bg-option');
+    if (first) first.focus();
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  if (btnModificar) btnModificar.addEventListener('click', () => openModal());
+  if (closeBtn) closeBtn.addEventListener('click', () => closeModal());
+  if (resetBtn) resetBtn.addEventListener('click', () => { removeBackground(); closeModal(); });
+
+  bgOptions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const bg = btn.dataset.bg;
+      applyBackground(bg);
+      closeModal();
     });
-});
-
-// Opcional: Cierra el overlay con la tecla ESC
-document.addEventListener('keydown', function(e) {
-    if (e.key === "Escape") {
-        document.getElementById('overlay-menu').style.display = 'none';
-    }
-    if (e.key === "Enter") {
-        document.getElementById('overlay-menu').style.display = 'none';
-        document.getElementById('sticky-menu').classList.remove('oculto');
-        setTimeout(() => {
-            document.getElementById('sticky-menu').classList.add('visible');
-        }, 10);
-    }
-    if (e.key === "ArrowRight") {
-        const btnDer = document.querySelector('.carrusel-flecha.derecha');
-        if (btnDer) {
-            btnDer.click();
-        }
-    }
-    if (e.key === "ArrowLeft") {
-        const btnIzq = document.querySelector('.carrusel-flecha.izquierda');
-        if (btnIzq) {
-            btnIzq.click();
-        }
-    }
-});
-
-// Carrusel automático de habilidades
-const habilidadesCarrusel = document.getElementById('habilidades-carrusel');
-if (habilidadesCarrusel) {
-    setInterval(() => {
-        const first = habilidadesCarrusel.firstElementChild;
-        habilidadesCarrusel.appendChild(first.cloneNode(true));
-        habilidadesCarrusel.removeChild(first);
-    }, 1800);
-}
-
-
-
-// Carrusel automático y con flechas
-const proyectosCarruselFlechas = document.getElementById('proyectos-carrusel');
-const btnIzq = document.querySelector('.carrusel-flecha.izquierda');
-const btnDer = document.querySelector('.carrusel-flecha.derecha');
-
-if (proyectosCarruselFlechas && btnIzq && btnDer) {
-    let index = 0;
-    const cards = proyectosCarruselFlechas.children;
-    const total = cards.length;
-
-    function mostrar(index) {
-        const ancho = cards[0].offsetWidth + 32; // 32px = gap (ajusta si cambias el gap)
-        proyectosCarruselFlechas.scrollTo({ left: index * ancho, behavior: 'smooth' });
-    }
-
-    btnIzq.onclick = () => {
-        index = (index - 1 + total) % total;
-        mostrar(index);
-    };
-
-    btnDer.onclick = () => {
-        index = (index + 1) % total;
-        mostrar(index);
-    };
-
-    // Carrusel automático
-    setInterval(() => {
-        index = (index + 1) % total;
-        mostrar(index);
-    }, 6500);
-}
-
-document.querySelectorAll('.overlay-link').forEach(link => {
-    link.addEventListener('click', function() {
-        // Oculta el overlay
-        document.getElementById('overlay-menu').style.display = 'none';
-        // Muestra el menú sticky con animación
-        document.getElementById('sticky-menu').classList.remove('oculto');
-        setTimeout(() => {
-            document.getElementById('sticky-menu').classList.add('visible');
-        }, 10);
-    });
-});
-
-// Opcional: Mostrar sticky-menu si recargas y overlay ya no está
-window.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('overlay-menu').style.display === 'none') {
-        document.getElementById('sticky-menu').classList.remove('oculto');
-        document.getElementById('sticky-menu').classList.add('visible');
-    }
-});
-
-document.querySelectorAll('.overlay-link').forEach(link => {
-    link.addEventListener('click', function(e) {
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        const overlayCard = document.querySelector('.overlay-card');
-        // Inicia la animación de viaje
-        overlayCard.classList.add('animar-viaje');
-        setTimeout(() => {
-            overlayCard.classList.add('viaje-final');
-        }, 10);
-
-        // Después de la animación, oculta overlay y muestra sticky-menu
-        setTimeout(() => {
-            document.getElementById('overlay-menu').style.display = 'none';
-            document.getElementById('sticky-menu').classList.remove('oculto');
-            setTimeout(() => {
-                document.getElementById('sticky-menu').classList.add('visible');
-            }, 10);
-            // Navega a la sección
-            window.location.hash = link.getAttribute('href');
-        }, 850);
+        btn.click();
+      }
     });
-});
-
-// steam
-
-document.querySelectorAll('.ach-card img').forEach(img => {
-  img.loading = 'lazy';
-});
-
-// tooltip simple (accesible)
-document.querySelectorAll('.ach-card').forEach(card => {
-  card.addEventListener('keydown', e => { if (e.key === 'Enter') card.click(); });
-  card.addEventListener('click', () => {
-    // abrir modal con detalle del logro o proyecto
   });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (modal && modal.classList.contains('open')) closeModal();
+    }
+  });
+
+  const saved = localStorage.getItem('profile_bg');
+  if (saved) applyBackground(saved);
 });
+
+function applyBackground(name) {
+  document.body.classList.remove('bg1','bg2','bg3','bg4','bg5');
+  if (name && ['bg1','bg2','bg3','bg4','bg5'].includes(name)) {
+    document.body.classList.add(name);
+    try { localStorage.setItem('profile_bg', name); } catch (err) { /* ignore */ }
+  }
+}
+
+function removeBackground() {
+  document.body.classList.remove('bg1','bg2','bg3','bg4','bg5');
+  try { localStorage.removeItem('profile_bg'); } catch (err) { /* ignore */ }
+}
